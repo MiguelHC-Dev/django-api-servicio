@@ -152,7 +152,9 @@ if not DEBUG:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "django-api-servicio-1.onrender.com"
+
 ]
 
 MEDIA_URL = '/media/'
