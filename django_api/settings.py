@@ -154,7 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://django-api-servicio-1.onrender.com"
+    "https://django-api-servicio-1.onrender.com",
+    "https://web-production-e0ab.up.railway.app"
 
 ]
 
@@ -168,4 +169,4 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://*","https://web-production-e0ab.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://web-production-e0ab.up.railway.app"]
