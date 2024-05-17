@@ -167,3 +167,5 @@ REST_FRAMEWORK = {
     ...: ...,
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
+
+CSRF_TRUSTED_ORIGINS = ["https://*","https://web-production-e0ab.up.railway.app"]
