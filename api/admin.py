@@ -7,6 +7,7 @@ from django.contrib.auth.models import Group
 admin.site.register(TiposFormatos)
 admin.site.register(Formato)
 admin.site.register(ServicioSocial)
+admin.site.register(Carrera)
 
 class UsuarioAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -28,3 +29,4 @@ class UsuarioAdmin(admin.ModelAdmin):
 admin.site.register(Usuario, UsuarioAdmin)
 
 admin.site.unregister(Group)
+
