@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-$f6iug5ca(awo5ic894h5o&^9(mmw&ya8ud66mqzgd1m3v!_nb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-e0ab.up.railway.app']
+ALLOWED_HOSTS = ['web-production-e0ab.up.railway.app',
+                    '127.0.0.1',
+                    'django-api-servicio-1.onrender.com',                       
+                 ]
 
 
 
@@ -92,7 +95,7 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://postgres:gglaCHnWuonxpjujzoiupurJycPYCptH@monorail.proxy.rlwy.net:23700/railway')
+    'default': dj_database_url.config(default='postgres://db_servicio_user:ivTLHty0XeYzx0hSHzjIAqPnvP1gt1rm@dpg-cp3dckvsc6pc73fmu1r0-a/db_servicio')
     
 }
 
