@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-e0ab.up.railway.app',
                     '127.0.0.1',
-                    'django-api-servicio-1.onrender.com',                       
+                    'django-api-servicio-1.onrender.com',    
+                    'django-api-servicio.onrender.com',                   
                  ]
 
 
