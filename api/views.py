@@ -200,6 +200,19 @@ def login(request):
 
 @api_view(['POST'])
 def register(request):
+    """
+    Registrar un nuevo usuario.
+
+    Datos de entrada:
+    - username: Nombre de usuario
+    - password: Contraseña
+    - email: Correo electrónico (opcional)
+    - otros campos necesarios...
+
+    Respuesta:
+    - token: Token de autenticación
+    - user: Datos del usuario registrado
+    """
     serializer = UsuarioSerializer(data=request.data)
     if serializer.is_valid():
         user = serializer.save()
@@ -207,10 +220,10 @@ def register(request):
         user.save()
 
         token, created = Token.objects.get_or_create(user=user)
-        # Es importante no devolver la contraseña, incluso si está hasheada.
         return Response({'token': token.key, 'user': serializer.data}, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['POST'])
 def profile(request):

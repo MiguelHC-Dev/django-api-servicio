@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://db_servicio_user:ivTLHty0XeYzx0hSHzjIAqPnvP1gt1rm@dpg-cp3dckvsc6pc73fmu1r0-a/db_servicio')
+    'default': dj_database_url.config(default='postgres://db_servicio_user:ivTLHty0XeYzx0hSHzjIAqPnvP1gt1rm@dpg-cp3dckvsc6pc73fmu1r0-a.oregon-postgres.render.com/db_servicio')
     
 }
 
@@ -159,6 +159,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://web-production-e0ab.up.railway.app"
 
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
