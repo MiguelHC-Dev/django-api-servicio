@@ -74,5 +74,5 @@ class ServicioSocialSerializer(serializers.ModelSerializer):
     dependencia_organizacion = serializers.CharField(required=False)
     titular_organizacion = serializers.CharField(required=False)
     cargo_titular = serializers.CharField(required=False)
-    atencion_a_nombre = serializers.CharField(required=False)
-    atencion_a_cargo = serializers.CharField(required=False)
+    atencion_a_nombre = serializers.CharField(required=False, allow_blank=True)
+    atencion_a_cargo = serializers.CharField(required=False, allow_blank=True)
