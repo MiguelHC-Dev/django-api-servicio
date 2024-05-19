@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Carrera, Usuario, TiposFormatos, Formato, ServicioSocial
 
+
 class DocumentSerializer(serializers.Serializer):
     nombre = serializers.CharField(max_length=100)
     apellido = serializers.CharField(max_length=100)
@@ -10,9 +11,9 @@ class DocumentSerializer(serializers.Serializer):
     nombre_programa = serializers.CharField(max_length=100)
     titular = serializers.CharField(max_length=100)
     cargo = serializers.CharField(max_length=100)
-    atencion_nombre = serializers.CharField(max_length=100)
-    atencion_cargo = serializers.CharField(max_length=100)
-    
+    atencion_nombre = serializers.CharField(max_length=100, required=False, allow_blank=True)
+    atencion_cargo = serializers.CharField(max_length=100, required=False, allow_blank=True)
+
 
 
 

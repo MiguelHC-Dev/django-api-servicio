@@ -70,6 +70,7 @@ class DocumentAPIView(APIView):
                 # Imprimir información sobre el documento para depuración
                 print(f"Document loaded with {len(doc.paragraphs)} paragraphs.")
 
+                # Obtener valores del serializer y proporcionar valores predeterminados si están ausentes
                 replacements = {
                     'nombre': serializer.validated_data['nombre'],
                     'apellido': serializer.validated_data['apellido'],
@@ -79,8 +80,8 @@ class DocumentAPIView(APIView):
                     'nombre_programa': serializer.validated_data['nombre_programa'],
                     'titular': serializer.validated_data['titular'],
                     'cargo': serializer.validated_data['cargo'],
-                    'atencion_nombre': serializer.validated_data['atencion_nombre'],
-                    'atencion_cargo': serializer.validated_data['atencion_cargo'],
+                    'atencion_nombre': serializer.validated_data.get('atencion_nombre', ''),
+                    'atencion_cargo': serializer.validated_data.get('atencion_cargo', ''),
                 }
 
                 # Imprimir las claves y valores para verificar
@@ -104,7 +105,6 @@ class DocumentAPIView(APIView):
                 return Response({'error': 'Error al procesar el documento.', 'details': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 @api_view(['PATCH'])
 @authentication_classes([TokenAuthentication])
