@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://db_servicio_user:ivTLHty0XeYzx0hSHzjIAqPnvP1gt1rm@dpg-cp3dckvsc6pc73fmu1r0-a.oregon-postgres.render.com/db_servicio')
+    'default': dj_database_url.config(default='postgres://db_servicio_user:ivTLHty0XeYzx0hSHzjIAqPnvP1gt1rm@dpg-cp3dckvsc6pc73fmu1r0-a/db_servicio')
     
 }
 

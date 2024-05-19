@@ -33,6 +33,23 @@ class UsuarioSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'password', 'tipo_usuario', 'carrera', 'servicio', 'residencia', 'ingles', 'first_name', 'last_name', 'email']
         extra_kwargs = {'password': {'write_only': True}}
 
+    def create(self, validated_data):
+        user = Usuario(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            first_name=validated_data['first_name'],
+            last_name=validated_data['last_name'],
+            tipo_usuario=validated_data['tipo_usuario'],
+            carrera=validated_data.get('carrera'),  # get() para campos opcionales
+            servicio=validated_data.get('servicio', False),
+            residencia=validated_data.get('residencia', False),
+            ingles=validated_data.get('ingles', False),
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+
+
 
 class TiposFormatosSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,3 +67,11 @@ class ServicioSocialSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServicioSocial
         fields = '__all__'
+
+    nombre_programa = serializers.CharField(required=False)
+    area = serializers.CharField(required=False)
+    dependencia_organizacion = serializers.CharField(required=False)
+    titular_organizacion = serializers.CharField(required=False)
+    cargo_titular = serializers.CharField(required=False)
+    atencion_a_nombre = serializers.CharField(required=False)
+    atencion_a_cargo = serializers.CharField(required=False)

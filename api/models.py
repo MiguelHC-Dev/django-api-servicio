@@ -85,11 +85,11 @@ class Formato(models.Model):
 
 class ServicioSocial(models.Model):
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, unique=True)  # Cambio aplicado aquí
-    nombre_programa = models.CharField(max_length=255)
-    area = models.CharField(max_length=255)
-    dependencia_organizacion = models.CharField(max_length=255)
-    titular_organizacion = models.CharField(max_length=255)
-    cargo_titular = models.CharField(max_length=255)
+    nombre_programa = models.CharField(max_length=255, null=True, blank=True)
+    area = models.CharField(max_length=255, null=True, blank=True) 
+    dependencia_organizacion = models.CharField(max_length=255, null=True, blank=True)
+    titular_organizacion = models.CharField(max_length=255, null=True, blank=True)
+    cargo_titular = models.CharField(max_length=255, null=True, blank=True)
     atencion_a_nombre = models.CharField(max_length=255, null=True, blank=True)
     atencion_a_cargo = models.CharField(max_length=255, null=True, blank=True)
 
