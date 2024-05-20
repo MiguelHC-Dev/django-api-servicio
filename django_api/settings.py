@@ -31,7 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['web-production-e0ab.up.railway.app',
                     '127.0.0.1',
                     'django-api-servicio-1.onrender.com',    
-                    'django-api-servicio.onrender.com',                   
+                    'django-api-servicio.onrender.com',     
+
                  ]
 
 
@@ -156,7 +157,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://django-api-servicio-1.onrender.com",
-    "https://web-production-e0ab.up.railway.app"
+    "https://web-production-e0ab.up.railway.app",
+    "https://django-api-servicio.onrender.com",
 
 ]
 
